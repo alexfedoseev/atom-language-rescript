@@ -1,7 +1,7 @@
 {
-  "name": "language-reason",
-  "repository": "https://github.com/reasonml-editor/language-reason",
+  "name": "language-rescript",
+  "repository": "https://github.com/alexfedoseev/language-rescript",
   "private": true,
-  "version": "0.0.6",
-  "description": "Reason language support in Atom"
+  "version": "0.0.1",
+  "description": "ReScript language support in Atom"
 }
