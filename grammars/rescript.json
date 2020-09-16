@@ -124,7 +124,7 @@
           ]
         },
         {
-          "contentName": "string.quoted.other",
+          "name": "string.template",
           "begin": "([a-z_][0-9a-zA-Z_]*)?(`)",
           "end": "`",
           "beginCaptures": {
@@ -132,14 +132,42 @@
               "name": "variables.annotation"
             },
             "2": {
-              "name": "string.quoted.other punctuation.definition.string.begin"
+              "name": "punctuation.definition.string.template.begin"
             }
           },
           "endCaptures": {
             "1": {
-              "name": "string.quoted.other punctuation.definition.string.end"
+              "name": "punctuation.definition.string.template.end"
             }
-          }
+          },
+          "patterns": [
+            {
+              "name": "meta.template.expression",
+              "begin": "\\$\\{",
+              "beginCaptures": {
+                "0": {
+                  "name": "punctuation.section.interpolation.begin"
+                }
+              },
+              "end": "\\}",
+              "endCaptures": {
+                "0": {
+                  "name": "punctuation.section.interpolation.end"
+                }
+              },
+              "patterns": [
+                {
+                  "match": "[a-z_][0-9a-zA-Z_]*"
+                },
+                {
+                  "include": "#operator"
+                },
+                {
+                  "include": "#punctuations"
+                }
+              ]
+            }
+          ]
         }
       ]
     },
@@ -190,9 +218,12 @@
           "name": "variable.function variable.other"
         },
         {
-          "match": "(#)[a-zA-Z][0-9a-zA-Z_]*\\b",
+          "match": "(#)(\\.\\.\\.)?[a-zA-Z][0-9a-zA-Z_]*\\b",
           "captures": {
             "1": {
+              "name": "punctuation.definition.keyword"
+            },
+            "2": {
               "name": "punctuation.definition.keyword"
             }
           }
@@ -214,19 +245,19 @@
     "list": {
       "patterns": [
         {
-          "match": "\\b(list)(\\[)",
+          "match": "\\b(list)(\\{)",
           "captures": {
             "1": {
               "name": "keyword"
             },
             "2": {
-              "name": "punctuation.section.brackets.begin"
+              "name": "punctuation.section.braces.begin"
             }
           }
         },
         {
-          "match": "\\]",
-          "name": "punctuation.section.brackets.end"
+          "match": "\\}",
+          "name": "punctuation.section.braces.end"
         }
       ]
     },
