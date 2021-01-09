@@ -2,6 +2,6 @@
   "name": "language-rescript",
   "repository": "https://github.com/alexfedoseev/atom-language-rescript",
   "private": true,
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "ReScript language support in Atom"
 }
