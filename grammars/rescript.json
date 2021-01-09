@@ -198,7 +198,7 @@
     "operator": {
       "patterns": [
         {
-          "match": "->|\\|\\||&&|\\+\\+|\\*\\*|\\+\\.|\\+|-\\.|-|\\*\\.|\\*|/\\.|/|\\.\\.\\.|\\.\\.|\\|>|===|==|\\^|:=|!|>=|<=",
+          "match": "->|\\|\\||&&|\\+\\+|\\*\\*|\\+\\.|\\+|-\\.|-|\\*\\.|\\*|/\\.|/|\\.\\.\\.|\\.\\.|\\|>|===|==|\\^|:=|!|>=(?! *\\?)|<=",
           "name": "keyword.operator"
         }
       ]
@@ -218,13 +218,16 @@
           "name": "variable.function variable.other"
         },
         {
-          "match": "(#)(\\.\\.\\.)?[a-zA-Z][0-9a-zA-Z_]*\\b",
+          "match": "(#)(\\.\\.\\.)?([a-zA-Z][0-9a-zA-Z_]*)\\b",
           "captures": {
             "1": {
               "name": "punctuation.definition.keyword"
             },
             "2": {
               "name": "punctuation.definition.keyword"
+            },
+            "3": {
+              "name": "variable.function variable.other"
             }
           }
         }
@@ -347,7 +350,7 @@
           }
         },
         {
-          "match": "\\b(open|include)\\s*",
+          "match": "\\b(open|include)\\s+",
           "name": "keyword"
         }
       ]
