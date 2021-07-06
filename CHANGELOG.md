@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.5.0
+- Sync with upstream
+
 ## 0.4.0
 - Sync with upstream
 
